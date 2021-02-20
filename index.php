@@ -1,5 +1,6 @@
 <<?php
-$token = "1674170793:AAHuKLw6Tvxw5v4s52a0Fwb5u3E3sW31FYQ";
+require_once(dirname(__FILE__) . '/../token.php');
+require_once(dirname(__FILE__) . '/curl-lib.php');
 $website = "https://api.telegram.org/bot".$token;
 $update = file_get_contents('php://input');
 $update = json_decode($update, TRUE);
