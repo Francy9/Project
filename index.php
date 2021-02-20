@@ -10,7 +10,7 @@ $text = $update["message"]["text"];
 switch($text){
 
     case "luogo" :
-        $output = ("https://server-openweather.herokuapp.com/luogo");
+        $output =http_request("https://server-openweather.herokuapp.com/luogo");
         sendMessage($chatid, $output);
         break;
     default:
