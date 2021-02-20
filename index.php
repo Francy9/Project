@@ -1,5 +1,5 @@
 <<?php
-require_once(dirname(__FILE__) . '/bot/token.php');
+require_once(dirname(__FILE__) . 'Francy9/bot/token.php');
 require_once(dirname(__FILE__) . '/curl-lib.php');
 $website = "https://api.telegram.org/bot".$token;
 $update = file_get_contents('php://input');
