@@ -14,6 +14,7 @@ function http_request($url) {
 
     // Esecuzione della richiesta, $response = contenuto della risposta testuale
     $response = curl_exec($handle);
+    
     curl_close($handle);
     $status = curl_getinfo($handle, CURLINFO_HTTP_CODE);
     if($status != 200) {
@@ -21,5 +22,5 @@ function http_request($url) {
     }
 
     // Decodifica della risposta JSON
-    return json_decode($response,TRUE);
+    return $response;
 }
