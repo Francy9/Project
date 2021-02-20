@@ -11,8 +11,7 @@ switch($text){
 
     case "luogo" :
         $output =http_request("https://server-openweather.herokuapp.com/luogo");
-        $test = json_decode($output, TRUE);
-        sendMessage($chatid, $test);
+        sendMessage($chatid,$output);
         break;
     default:
     sendMessage($chatid,"ciao");
