@@ -7,16 +7,14 @@ $update = json_decode($update, TRUE);
 
 $chatid = $update["message"]["from"]["id"];
 $text = $update["message"]["text"];
-switch($text){
-
-    case "milano" :
+ if(text!=NULL){
         $output =http_request("https://server-openweather.herokuapp.com/luogo/$text");
+        if(is_nan(output)){
         $tempo = json_encode($output, JSON_PRETTY_PRINT);
         sendMessage($chatid,$tempo);
-        break;
-    default:
-    sendMessage($chatid,"ciao");
-    break;
+        }
+        sendMessage($chatid,"furbetto scrivi una città");
+ } 
 }
 function sendMessage($chatid,$text){
 $url = $GLOBALS["website"]."/sendMessage?chat_id=$chatid&text=".urlencode($text);
