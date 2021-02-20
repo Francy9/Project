@@ -10,16 +10,7 @@ $text = $update["message"]["text"];
 switch($text){
 
     case "luogo" :
-        $handle = curl_init();
-        $url = "https://server-openweather.herokuapp.com/luogo";
-        // Set the url
-        curl_setopt($handle, CURLOPT_URL, $url);
-        // Set the result output to be a string
-        curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($handle, CURLOPT_HEADER, 0);
-        $output = curl_exec($handle);
-        curl_close($handle);  
-       $test = json_decode($output, TRUE);
+        $output = ("https://server-openweather.herokuapp.com/luogo");
         sendMessage($chatid, $output);
         break;
     default:
