@@ -8,18 +8,18 @@ function http_request($url) {
     }
 
     curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($handle, CURLOPT_HTTPHEADER, array(
-        "User-Agent: il mio primo script PHP"
-    ));
+    curl_setopt($handle, CURLOPT_HEADER,0);
+       
+    
 
     // Esecuzione della richiesta, $response = contenuto della risposta testuale
     $response = curl_exec($handle);
-
+    curl_close($handle);
     $status = curl_getinfo($handle, CURLINFO_HTTP_CODE);
     if($status != 200) {
         die("Richiesta HTTP fallita, status {$status}\n");
     }
 
     // Decodifica della risposta JSON
-    return json_decode($response);
+    return json_decode($response,TRUE);
 }
