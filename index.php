@@ -10,7 +10,7 @@ $text = $update["message"]["text"];
 switch($text){
 
     case "milano" :
-        $output =http_request("https://server-openweather.herokuapp.com/luogo?città=milano");
+        $output =http_request("https://server-openweather.herokuapp.com/luogo/$text");
         $tempo = json_encode($output, JSON_PRETTY_PRINT);
         sendMessage($chatid,$tempo);
         break;
