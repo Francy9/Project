@@ -9,8 +9,8 @@ $chatid = $update["message"]["from"]["id"];
 $text = $update["message"]["text"];
 switch($text){
 
-    case "luogo" :
-        $output =http_request("https://server-openweather.herokuapp.com/luogo");
+    case "milano" :
+        $output =http_request("https://server-openweather.herokuapp.com/luogo?città=$text");
         sendMessage($chatid,$output);
         break;
     default:
