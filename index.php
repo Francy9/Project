@@ -15,7 +15,6 @@ $text = $update["message"]["text"];
         }
         sendMessage($chatid,"furbetto scrivi una città");
  } 
-}
 function sendMessage($chatid,$text){
 $url = $GLOBALS["website"]."/sendMessage?chat_id=$chatid&text=".urlencode($text);
 file_get_contents($url);
