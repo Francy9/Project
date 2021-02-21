@@ -20,7 +20,7 @@ $text = $update["message"]["text"];
         
  } 
 function sendMessage($chatid,$text){
-$url = $GLOBALS["website"]."/sendMessage?chat_id=$chatid&parse_mode=text/plain&text=".urlencode($text);
+$url = $GLOBALS["website"]."/sendMessage?chat_id=$chatid&text=".urlencode($text);
 file_get_contents($url);
 }
 
