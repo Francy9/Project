@@ -10,10 +10,11 @@ $text = $update["message"]["text"];
  if($text!=NULL){
         $output =http_request("https://server-openweather.herokuapp.com/luogo/$text");
         if(is_numeric($output)){
+        sendMessage($chatid,"furbetto scrivi una città");
+        }
         $tempo = json_encode($output, JSON_PRETTY_PRINT);
         sendMessage($chatid,$tempo);
-        }
-        sendMessage($chatid,"furbetto scrivi una città");
+        
  } 
 function sendMessage($chatid,$text){
 $url = $GLOBALS["website"]."/sendMessage?chat_id=$chatid&text=".urlencode($text);
