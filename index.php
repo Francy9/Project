@@ -13,13 +13,14 @@ $text = $update["message"]["text"];
         sendMessage($chatid,"furbetto scrivi una città");
         }
         else{
+         print_r($output)
         //$tempo = json_encode($output, JSON_PRETTY_PRINT);
          sendMessage($chatid,$output);
         }
         
  } 
 function sendMessage($chatid,$text){
-$url = $GLOBALS["website"]."/sendMessage?chat_id=$chatid&parse_mode=text/plain&text=urlencode($text)";
+$url = $GLOBALS["website"]."/sendMessage?chat_id=$chatid&parse_mode=text/plain&text=".urlencode($text);
 file_get_contents($url);
 }
 
