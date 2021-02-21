@@ -13,8 +13,8 @@ $text = $update["message"]["text"];
         sendMessage($chatid,"furbetto scrivi una città");
         }
         else{
-        $tempo = json_encode($output, JSON_PRETTY_PRINT);
-         sendMessage($chatid,$tempo);
+        //$tempo = json_encode($output, JSON_PRETTY_PRINT);
+         sendMessage($chatid,$output);
         }
         
  } 
