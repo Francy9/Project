@@ -14,12 +14,13 @@ $text = $update["message"]["text"];
         }
         else{
         //$tempo = json_encode($output, JSON_PRETTY_PRINT);
-        sendMessage($chatid,$output);
+         system.out.println($output);
+         sendMessage($chatid,$output);
         }
         
  } 
 function sendMessage($chatid,$text){
-$url = $GLOBALS["website"]."/sendMessage?chat_id=$chatid&text=$text";
+$url = $GLOBALS["website"]."/sendMessage?chat_id=$chatid&text=".urlencode($text);
 file_get_contents($url);
 }
 
