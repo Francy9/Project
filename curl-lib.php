@@ -10,7 +10,7 @@ function http_request($url) {
     curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($handle, CURLOPT_HEADER,0);
     curl_setopt($handle, CURLOPT_HTTPHEADER, array('Host:server-openweather.herokuapp.com'));
-    curl_setopt($handle, CURLOPT_TRANSFERTEXT,1);
+    curl_setopt($handle, CURLOPT_TRANSFERTEXT,1L);
     curl_setopt($handle,CURLOPT_TIMEOUT,1000);
        
     
