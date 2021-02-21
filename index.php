@@ -8,12 +8,12 @@ $update = json_decode($update, TRUE);
 $chatid = $update["message"]["from"]["id"];
 $text = $update["message"]["text"];
  if($text!=NULL){
-        $output =http_request("https://server-openweather.herokuapp.com/luogo/$text");
+        $output = http_request("https://server-openweather.herokuapp.com/luogo/$text");
         if(is_numeric($output)){
         sendMessage($chatid,"furbetto scrivi una città");
         }
         else{
-        $tempo = json_encode($output, JSON_PRETTY_PRINT);
+        //$tempo = json_encode($output, JSON_PRETTY_PRINT);
         sendMessage($chatid,$output);
         }
         
