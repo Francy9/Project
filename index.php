@@ -12,8 +12,10 @@ $text = $update["message"]["text"];
         if(is_numeric($output)){
         sendMessage($chatid,"furbetto scrivi una città");
         }
+        else{
         $tempo = json_encode($output, JSON_PRETTY_PRINT);
         sendMessage($chatid,$tempo);
+        }
         
  } 
 function sendMessage($chatid,$text){
