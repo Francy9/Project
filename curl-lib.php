@@ -19,8 +19,8 @@ function http_request($url) {
     curl_close($handle);
     $status = curl_getinfo($handle, CURLINFO_HTTP_CODE);
     if($status != 200) {
-        die("Richiesta HTTP fallita, status {$status}\n");
         return($status);
+        die(/*"Richiesta HTTP fallita, status {$status}\n"*/);
     }
 
     // Decodifica della risposta JSON
