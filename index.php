@@ -6,7 +6,7 @@ $update = file_get_contents('php://input');
 $update = json_decode($update, TRUE);
 
 $last_message = dirname(__FILE__) . '/message.txt';
-$messaggio_prec = @file_get_contents($last_message);
+$messaggio_prec = file_get_contents($last_message);
 
 $chatid = $update["message"]["from"]["id"];
 $text = $update["message"]["text"];
