@@ -26,5 +26,5 @@ function http_request($url) {
     }
 
     // Decodifica della risposta JSON
-    return json_decode($response);
+    return $response;
 }
