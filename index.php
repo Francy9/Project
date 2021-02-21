@@ -15,6 +15,7 @@ if($text=="/start"){
  sendMessage($chatid,"Ciao che tipo di meteo vuoi?",$keyboard);
  file_put_contents($last_message, $text);
 }
+else{
 switch($messaggio_prec){
  case "/start" :
   if ($text=="Dettagiato"){
@@ -78,6 +79,7 @@ switch($messaggio_prec){
  default:
   sendMessage($chatid,"per iniziare digita /start",$keyboard);
    break;
+ }
 }
  
 function sendMessage($chatid,$text,$keyboard){
