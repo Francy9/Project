@@ -14,7 +14,7 @@ $text = $update["message"]["text"];
         }
         else{
         //$tempo = json_encode($output, JSON_PRETTY_PRINT);
-         system.out.println($output);
+         println($output);
          sendMessage($chatid,$output);
         }
         
