@@ -9,7 +9,7 @@ $chatid = $update["message"]["from"]["id"];
 $text = $update["message"]["text"];
  if($text!=NULL){
         $output =http_request("https://server-openweather.herokuapp.com/luogo/$text");
-        if(is_nan($output)){
+        if(is_numeric($output)){
         $tempo = json_encode($output, JSON_PRETTY_PRINT);
         sendMessage($chatid,$tempo);
         }
