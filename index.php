@@ -15,7 +15,7 @@ $long =$update["message"]["location"]["longitude"];
 if($text=="/start"){
  $keyboard = '["Dettagiato"],["Giornaliero"]';
  sendMessage($chatid,"Ciao!! con questo bot puoi avere informazioni sul meteo. 
-                      Per prima cosa digita Dettagliato se vuoi un informazione in particolare del meteo odierno,
+                      \nPer prima cosa digita Dettagliato se vuoi un informazione in particolare del meteo odierno,
                       altrimenti digita Giornaliero",$keyboard);
  file_put_contents($last_message, $text);
 }
@@ -30,7 +30,7 @@ switch($messaggio_prec){
   if($text=="Giornaliero"){
     $keyboard = '["Oggi"],["Domani"],["Fra 2 giorni"],["Fra 3 giorni"],["Fra 4 giorni"],["Fra 5 giorni"],["Fra 6 giorni"],["Fra 7 giorni"]';
    sendMessage($chatid," E possibile sapere il meteo di uno dei prossimi 7 giorni.
-                         ATTENZIONE!! è possibile avere il meteo odierno inviandoci la tua posizione oppure inserendo il nome di una città,
+                         \nATTENZIONE!! è possibile avere il meteo odierno inviandoci la tua posizione oppure inserendo il nome di una città,
                          se invece si vuole il meteo dei prossimi giorni è possibile farlo solo inviandoci la tua posizione",$keyboard); 
    file_put_contents($last_message, $text);
    }else{
