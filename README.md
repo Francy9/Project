@@ -9,22 +9,22 @@
 
 ## Descrizione ##
 
-lo scopo di questo progetto è dare la possibilità all' utente finale di:
-* conoscere il meteo in cui si trova per i prossimi 7 giorni.
-* conscere il meteo attuale di una città.
+Lo scopo di questo progetto è dare la possibilità all' utente finale di:
+* conoscere il meteo del luogo in cui si trova per i prossimi 7 giorni.
+* conoscere il meteo attuale di una città.
 * conoscere solo una specifica componente metereologica(tempo,temperatura,massime,minime,alba,tramonto,). 
 
 -----------------------------------------------------
 
 ## Relazione ##
-il progetto si basa sulla creazione di un API in NodeJS che effettua richieste ai server di "openWeather" richiedendo file json, e l' implementazione di un bot telegram in php. 
+Il progetto si basa sulla creazione di un API in NodeJS che effettua richieste ai server di "openWeather" richiedendo file di tipo json, e l' implementazione di un bot telegram in php. 
 
 -----------------------------------------------------
 
 
 <h1>Descrizione Progetto </h1>
-in base a quello che l'utente sceglie di voler sapere il bot telegram effettuerà una richiesta all'API che a sua volta effettuerà una richiesta ai server di "openWeather" ottenendo come risposta un file json, di questo file vengono prese solo determinate parti e inviate sottoforma di testo come risposta alla precedente richiesta effettuata dal bot.
-quello che ottiene l'utente finale è un file di testo inviatogli come messaggio telegram contenente parte delle informazioni prese dai server di "openWeather".
+In base a quello che l'utente sceglie il bot telegram effettuerà una richiesta all'API che a sua volta inoltrerà una richiesta ai server di "openWeather" ottenendo come risposta un file json. Di questo file vengono prese solo determinate parti e inviate sottoforma di testo come risposta alla precedente richiesta effettuata dal bot.
+Quello che ottiene l'utente finale è un file di testo inviatogli come messaggio telegram contenente parte delle informazioni prese dai server di "openWeather".
 
 Per la messa online del servizio è stato usato heroku sia per L'API che per il bot telegram.
 
