@@ -94,7 +94,7 @@ $url = $GLOBALS["website"]."/sendMessage?chat_id=$chatid&text=".urlencode($text)
 file_get_contents($url);
 }
 Function openWeather($tipo,$luogo){
- $risposta = http_request("https://server-openweather.herokuapp.com/$tipo/$text");
+ $risposta = http_request("https://server-openweather.herokuapp.com/$tipo/$luogo");
    if(is_numeric($output)){
      return("furbetto scrivi una città");
      }
