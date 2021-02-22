@@ -102,7 +102,7 @@ switch($messaggio_prec){
    $meteo = openweatherCoor("Giornaliero","0",$lat,$long,$last_message);
    sendMessage($chatid,$meteo,$tastiera);
   }else{
-   $meteo = openweather("Giornaliero",$text,$last_message);
+   $meteo = openweather("Attuale",$text,$last_message);
    sendMessage($chatid,$meteo,$tastiera);
   }
   break;
