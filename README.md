@@ -36,6 +36,7 @@ l'url dell'API è :
 
 l'url del bot telegram è :
 * https://bot-telegram-meteo.herokuapp.com/
+
 Per la messa online del servizio è stato usato heroku sia per L'API che per il bot telegram.
 
 <h2>Bot di telegram </h2>
