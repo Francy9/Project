@@ -22,13 +22,15 @@ switch($messaggio_prec){
   $keyboard = '["Tempo"],["Temperatura"],["Percepita"],["Minime"],["Massime"],["Alba"]["Tramonto"]';
   sendMessage($chatid,"cosa vuoi sapere di preciso?",$keyboard);
   file_put_contents($last_message, $text);
-  }if($text=="Giornaliero"){
+  }else{
+  if($text=="Giornaliero"){
    sendMessage($chatid,"inserisci il luogo",$keyboard);
    file_put_contents($last_message, $text);
    }else{
    $keyboard = '["Dettagiato"],["Giornaliero"]';
    sendMessage($chatid,"non ho capito!",$keyboard);
    }
+  }
   break;
  case "Dettagiato" :
   if ($text=="Tempo"||"Temperatura"||"Percepita"||"Minime"||"Massime"||"Alba"||"Tramonto"){
