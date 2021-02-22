@@ -156,6 +156,7 @@ Function openWeather($tipo,$luogo,$last_message){
      file_put_contents($last_message, $luogo); 
      return($risposta);
      }
+}
 Function openWeatherCoor($tipo,$giorno,$lat,$long,$last_message){
  $risposta = http_request("https://server-openweather.herokuapp.com/$tipo/$giorno?lat=$lat&long=$long");
    if(is_numeric($risposta)){
@@ -165,6 +166,5 @@ Function openWeatherCoor($tipo,$giorno,$lat,$long,$last_message){
      file_put_contents($last_message, $luogo); 
      return($risposta);
      }
-
 }
 ?>>
