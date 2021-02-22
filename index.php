@@ -14,7 +14,9 @@ $lat = $update["message"]["location"]["latitude"];
 $long =$update["message"]["location"]["longitude"];
 if($text=="/start"){
  $keyboard = '["Dettagiato"],["Giornaliero"]';
- sendMessage($chatid,"Ciao che tipo di meteo vuoi?",$keyboard);
+ sendMessage($chatid,"Ciao!! con questo bot puoi avere informazioni sul meteo. 
+                      Per prima cosa digita Dettagliato se vuoi un informazione in particolare del meteo odierno,
+                      altrimenti digita Giornaliero",$keyboard);
  file_put_contents($last_message, $text);
 }
 else{
@@ -22,16 +24,18 @@ switch($messaggio_prec){
  case "/start" :
   if ($text=="Dettagiato"){
   $keyboard = '["Tempo"],["Temperatura"],["Percepita"],["Minime"],["Massime"],["Alba"],["Tramonto"]';
-  sendMessage($chatid,"cosa vuoi sapere di preciso?",$keyboard);
+  sendMessage($chatid,"cosa vorresti sapere precisamente?",$keyboard);
   file_put_contents($last_message, $text);
   }else{
   if($text=="Giornaliero"){
     $keyboard = '["Oggi"],["Domani"],["Fra 2 giorni"],["Fra 3 giorni"],["Fra 4 giorni"],["Fra 5 giorni"],["Fra 6 giorni"],["Fra 7 giorni"]';
-   sendMessage($chatid,"fra quanti giorni?",$keyboard); 
+   sendMessage($chatid," E possibile sapere il meteo di uno dei prossimi 7 giorni.
+                         ATTENZIONE!! è possibile avere il meteo odierno inviandoci la tua posizione oppure inserendo il nome di una città,
+                         se invece si vuole il meteo dei prossimi giorni è possibile farlo solo inviandoci la tua posizione",$keyboard); 
    file_put_contents($last_message, $text);
    }else{
    $keyboard = '["Dettagiato"],["Giornaliero"]';
-   sendMessage($chatid,"non ho capito!",$keyboard);
+   sendMessage($chatid,"Scusa no ho capito! premi uno dei 2 pulsanti sotto la tastiera!!",$keyboard);
    }
   }
   break;
@@ -43,16 +47,16 @@ switch($messaggio_prec){
       $text=="Massime"||
       $text=="Alba"||
       $text=="Tramonto"){
-  sendMessage($chatid,"inserisci il luogo",$keyboard);
+  sendMessage($chatid,"Inserisci il nome di una città!!",$keyboard);
   file_put_contents($last_message, $text);
   }else{
    $keyboard = '["Tempo"],["Temperatura"],["Percepita"],["Minime"],["Massime"],["Alba"],["Tramonto"]';
-   sendMessage($chatid,"non ho capito!",$keyboard);
+   sendMessage($chatid,"Scusa no ho capito! premi uno dei 7 pulsanti sotto la tastiera!!",$keyboard);
   }
   break;
   case "Giornaliero":
   if ($text=="Oggi"){ 
-   sendMessage($chatid,"inserisci luogo o coordinate",$keyboard);
+   sendMessage($chatid,"inserisci nome di una cittào o inviaci la tua posizione",$keyboard);
    file_put_contents($last_message, $text);
   }else 
    if($text=="Domani"||
@@ -62,11 +66,11 @@ switch($messaggio_prec){
       $text=="Fra 5 giorni"||
       $text=="Fra 6 giorni"||
       $text=="Fra 7 giorni"){
-   sendMessage($chatid,"inserisci coordinate",$keyboard);
+   sendMessage($chatid,"inviaci la tua posizione",$keyboard);
    file_put_contents($last_message, $text);
    }else{
     $keyboard = '["Oggi"],["Domani"],["Fra 2 giorni"],["Fra 3 giorni"],["Fra 4 giorni"],["Fra 5 giorni"],["Fra 6 giorni"],["Fra 7 giorni"]';
-   sendMessage($chatid,"non ho capito!",$keyboard);    
+   sendMessage($chatid,"Scusa no ho capito! premi uno dei 8 pulsanti sotto la tastiera!!",$keyboard);    
    } 
  break;
  case "Tempo" :
@@ -103,8 +107,10 @@ switch($messaggio_prec){
    sendMessage($chatid,$meteo,$tastiera);
   }else{
    $meteo = openweather("Attuale",$text,$last_message);
-   sendMessage($chatid,$meteo,$tastiera);
-  }
+   if ($meteo=="ATTENZIONE!! digita il nome di una città"){
+   sendMessage($chatid,"ATTENZIONE!! digita il nome di una città o inviaci la tua posizione",$tastiera);
+    }
+   }
   break;
   case "Domani" :
    $meteo = openweatherCoor("Giornaliero","1",$lat,$long,$last_message);
@@ -150,7 +156,7 @@ file_get_contents($url);
 Function openWeather($tipo,$luogo,$last_message){
  $risposta = http_request("https://server-openweather.herokuapp.com/$tipo/$luogo");
    if(is_numeric($risposta)){
-     return("furbetto scrivi una città");
+     return("ATTENZIONE!! digita il nome di una città");
      }
      else{
      file_put_contents($last_message, $luogo); 
@@ -160,7 +166,7 @@ Function openWeather($tipo,$luogo,$last_message){
 Function openWeatherCoor($tipo,$giorno,$lat,$long,$last_message){
  $risposta = http_request("https://server-openweather.herokuapp.com/$tipo/$giorno?lat=$lat&long=$long");
    if(is_numeric($risposta)){
-     return("furbetto usa le coordinate");
+     return("ATTENZIONE!! devi inviarci la tua posizione se vuoi sapere il meteo dei prossimi giorni");
      }
      else{
      file_put_contents($last_message, $luogo); 
