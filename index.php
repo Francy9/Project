@@ -14,9 +14,9 @@ $lat = $update["message"]["location"]["latitude"];
 $long =$update["message"]["location"]["longitude"];
 if($text=="/start"){
  $keyboard = '["Dettagiato"],["Giornaliero"]';
- sendMessage($chatid,"Ciao!! con questo bot puoi avere informazioni sul meteo. 
-                      \nPer prima cosa digita Dettagliato se vuoi un informazione in particolare del meteo odierno,
-                      altrimenti digita Giornaliero",$keyboard);
+ sendMessage($chatid,"Ciao!! con questo bot puoi avere informazioni sul meteo\n". 
+                      "Per prima cosa digita Dettagliato se vuoi un informazione in particolare del meteo odierno,".
+                      "altrimenti digita Giornaliero",$keyboard);
  file_put_contents($last_message, $text);
 }
 else{
