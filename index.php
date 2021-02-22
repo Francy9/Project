@@ -33,7 +33,13 @@ switch($messaggio_prec){
   }
   break;
  case "Dettagiato" :
-  if ($text=="Tempo"||"Temperatura"||"Percepita"||"Minime"||"Massime"||"Alba"||"Tramonto"){
+  if ($text=="Tempo"|| 
+      $text=="Temperatura"||
+      $text=="Percepita"||
+      $text=="Minime"||
+      $text=="Massime"||
+      $text=="Alba"||
+      $text=="Tramonto"){
   sendMessage($chatid,"inserisci il luogo",$keyboard);
   file_put_contents($last_message, $text);
   }else{
