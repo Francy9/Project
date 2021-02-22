@@ -45,7 +45,7 @@ Una volta aver avviato l'applicazione telegram e ricercato il bot denominato "Me
 Una volta avviato il bot verrà inviato un messaggio di benvenuto e apparià una keyboard con due opzioni. La prima è quella di poter richiedere un meteo dettagliato, la seconda è quella di richiedere il meteo di un determinato giorno:
 <a><img src='Immagini/bot_benvenuto.PNG' height='300' alt='ScreenShot'/></a>
 In caso si scerlga il meteo giornaliero potremmo selezionare il giorno di cui si vuol conoscere il meteo :
-<a><img src='Immagini/Meteo_giornaliero' height='300' alt='ScreenShot'/></a>
+<a><img src='Immagini/Meteo_giornaliero.PNG' height='300' alt='ScreenShot'/></a>
 In caso si scerlga il meteo dettagliato avremmo una serie di opzioni per poter decidere cosa voglianmo sapere precisamente :
 <a><img src='Immagini/keyboard_scelta_dettagliata.PNG' height='300' alt='ScreenShot'/></a>
 In caso vogliamo sapere il meteo di un giorno che non sia quello odierno dovremmo inviare la nosra posizione :
