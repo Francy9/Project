@@ -31,15 +31,15 @@ Per la messa online del servizio è stato usato heroku sia per L'API che per il 
 <h2>Bot di telegram </h2>
 Una volta aver avviato l'applicazione telegram e ricercato il bot denominato "Meteo_bot" avremmo una chiat che si presenta così:
 <a><img src='Immagini/bot_start.PNG' height='250' alt='ScreenShot'/></a>
-Una volta avviato il bot ci verrà inviato un messaggio di benvenuto e apparià una keyboard con due opzioni, la prima quella di poter richiedere un meteo dettagliato e la seconda è quella di richiedere il meteo di un determinato giorno:
+Una volta avviato il bot verrà inviato un messaggio di benvenuto e apparià una keyboard con due opzioni. La prima è quella di poter richiedere un meteo dettagliato, la seconda è quella di richiedere il meteo di un determinato giorno:
 <a><img src='Immagini/bot_benvenuto.PNG' height='300' alt='ScreenShot'/></a>
-in caso si scerlga il meteo giornaliero potremmo scegliere di quale giorno conoscere il meteo :
+in caso si scerlga il meteo giornaliero potremmo selezionare il giorno di cui si vuol conoscere il meteo :
 <a><img src='Immagini/Meteo_giornaliero' height='300' alt='ScreenShot'/></a>
-in caso si scerlga il meteo dettagliato avremmo una serie di opzioni per poter scegiere cosa voglianmo sapere precisamente :
+in caso si scerlga il meteo dettagliato avremmo una serie di opzioni per poter decidere cosa voglianmo sapere precisamente :
 <a><img src='Immagini/keyboard_scelta_dettagliata.PNG' height='300' alt='ScreenShot'/></a>
 in caso vogliamo sapere il meteo di un giorno che non sia quello odierno dovremmo inviare la nosra posizione :
 <a><img src='Immagini/meteo_con_posizione.PNG' height='300' alt='ScreenShot'/></a>
-se ad esempio si vuole sapere il tempo in un determinato luogo bisogna procedere come segue:
+se ad esempio si vuole conoscere il tempo in un determinato luogo bisogna procedere come segue:
 <a><img src='Immagini/meteo_dettagliato.PNG' height='300' alt='ScreenShot'/></a>
 
 
