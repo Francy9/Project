@@ -27,11 +27,11 @@ In base a quello che l'utente sceglie il bot telegram effettuerà una richiesta 
 Quello che ottiene l'utente finale è un file di testo inviatogli come messaggio telegram contenente parte delle informazioni prese dai server di "openWeather".
 l'API effettua richieste a url di questo tipo: api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}&mode=json&units=metric&lang=it, nel caso si voglia sapere il meteo attuale.
 Nel caso invece si voglia richiedere il meteo di un giorno della settimana l'API efefttuerà richieste a url di questo tipo:
-https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=current,minutely,hourly,alerts&appid={API key}&mode=json&units=metric&lang=it
+* https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=current,minutely,hourly,alerts&appid={API key}&mode=json&units=metric&lang=it
 l'url dell'API è :
-https://server-openweather.herokuapp.com/
+* https://server-openweather.herokuapp.com/
 l'url del bot telegram è :
-https://bot-telegram-meteo.herokuapp.com/
+* https://bot-telegram-meteo.herokuapp.com/
 Per la messa online del servizio è stato usato heroku sia per L'API che per il bot telegram.
 
 <h2>Bot di telegram </h2>
