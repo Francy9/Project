@@ -3,7 +3,7 @@
 ## Progetto Piattaforme Digitali per la Gestione del Territorio ##
 
 ### Studente: ###
-* [Ducci Francesco](https://github.com/Francy9)
+* [Ducci Francesco][MAT N°283055](https://github.com/Francy9)
 
 -----------------------------------------------------
 
