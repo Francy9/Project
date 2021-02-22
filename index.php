@@ -48,36 +48,36 @@ switch($messaggio_prec){
   }
   break;
   case "Giornaliero":
-   $meteo = openweather("Giornaliero",$text);
+   $meteo = openweather("Giornaliero",$text,$last_message);
    sendMessage($chatid,$meteo,$tastiera);
     
  break;
  case "Tempo" :
-  $meteo = openweather("Tempo",$text);
+  $meteo = openweather("Tempo",$text,$last_message);
    sendMessage($chatid,$meteo,$tastiera);
   break;
   case "Temperatura" :
-  $meteo = openweather("Temperatura",$text);
+  $meteo = openweather("Temperatura",$text,$last_message);
    sendMessage($chatid,$meteo,$tastiera);
   break;
   case "Percepita" :
-   $meteo = openweather("Percepita",$text);
+   $meteo = openweather("Percepita",$text,$last_message);
    sendMessage($chatid,$meteo,$tastiera);
   break;
   case "Minime" :
-   $meteo = openweather("Minime",$text);
+   $meteo = openweather("Minime",$text,$last_message);
    sendMessage($chatid,$meteo,$tastiera);
   break;
   case "Massime" :
-   $meteo = openweather("Massime",$text);
+   $meteo = openweather("Massime",$text,$last_message);
    sendMessage($chatid,$meteo,$tastiera);
   break;
   case "Alba" :
-   $meteo = openweather("Alba",$text);
+   $meteo = openweather("Alba",$text,$last_message);
    sendMessage($chatid,$meteo,$tastiera);
   break;
   case "Tramonto" :
-   $meteo = openweather("Tramonto",$text);
+   $meteo = openweather("Tramonto",$text,$last_message);
    sendMessage($chatid,$meteo,$tastiera);
   break;
  default:
@@ -93,7 +93,7 @@ function sendMessage($chatid,$text,$keyboard){
 $url = $GLOBALS["website"]."/sendMessage?chat_id=$chatid&text=".urlencode($text).$tastiera;
 file_get_contents($url);
 }
-Function openWeather($tipo,$luogo){
+Function openWeather($tipo,$luogo,$last_message){
  $risposta = http_request("https://server-openweather.herokuapp.com/$tipo/$luogo");
    if(is_numeric($risposta)){
      return("furbetto scrivi una città");
