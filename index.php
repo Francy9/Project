@@ -109,7 +109,9 @@ switch($messaggio_prec){
    $meteo = openweather("Attuale",$text,$last_message);
    if ($meteo=="ATTENZIONE!! ⚠️ digita il nome di una città 🌆"){
    sendMessage($chatid,"<b>ATTENZIONE!!</b> ⚠️ digita il nome di una città 🌆 o inviaci la tua posizione 📍",$tastiera);
-    }
+    }else{
+    sendMessage($chatid,$meteo,$tastiera);
+   }
    }
   break;
   case "Domani" :
