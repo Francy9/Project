@@ -43,7 +43,7 @@ switch($messaggio_prec){
   sendMessage($chatid,"inserisci il luogo",$keyboard);
   file_put_contents($last_message, $text);
   }else{
-   $keyboard = '["Dettagiato"],["Giornaliero"]';
+   $keyboard = '["Tempo"],["Temperatura"],["Percepita"],["Minime"],["Massime"],["Alba"],["Tramonto"]';
    sendMessage($chatid,"non ho capito!",$keyboard);
   }
   break;
