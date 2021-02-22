@@ -19,7 +19,7 @@ else{
 switch($messaggio_prec){
  case "/start" :
   if ($text=="Dettagiato"){
-  $keyboard = '["Tempo"],["Temperatura"],["Percepita"],["Minime"],["Massime"],["Alba"]["Tramonto"]';
+  $keyboard = '["Tempo"],["Temperatura"],["Percepita"],["Minime"],["Massime"],["Alba"],["Tramonto"]';
   sendMessage($chatid,"cosa vuoi sapere di preciso?",$keyboard);
   file_put_contents($last_message, $text);
   }else{
