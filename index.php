@@ -13,7 +13,7 @@ $text = $update["message"]["text"];
 $lat = $update["message"]["location"]["latitude"];
 $long =$update["message"]["location"]["longitude"];
 if($text=="/start"){
- $keyboard = '["Dettagiato"],["Giornaliero"]';
+ $keyboard = '["Dettagliato"],["Giornaliero"]';
  sendMessage($chatid,"Ciao!! con questo bot puoi avere informazioni sul meteo.\n". 
                       "Per prima cosa digita <b>Dettagliato</b> se vuoi un informazione in particolare del meteo odierno,".
                       "altrimenti digita <b>Giornaliero</b>",$keyboard);
@@ -22,7 +22,7 @@ if($text=="/start"){
 else{
 switch($messaggio_prec){
  case "/start" :
-  if ($text=="Dettagiato"){
+  if ($text=="Dettagliato"){
   $keyboard = '["Tempo"],["Temperatura"],["Percepita"],["Minime"],["Massime"],["Alba"],["Tramonto"]';
   sendMessage($chatid,"cosa vorresti sapere precisamente?",$keyboard);
   file_put_contents($last_message, $text);
@@ -34,12 +34,12 @@ switch($messaggio_prec){
                          "se invece si vuole il meteo dei prossimi giorni è possibile farlo <b>SOLO</b> inviandoci la tua posizione 📍",$keyboard); 
    file_put_contents($last_message, $text);
    }else{
-   $keyboard = '["Dettagiato"],["Giornaliero"]';
+   $keyboard = '["Dettagliato"],["Giornaliero"]';
    sendMessage($chatid,"Scusa no ho capito ⁉️ premi uno dei 2 pulsanti sotto la tastiera!!",$keyboard);
    }
   }
   break;
- case "Dettagiato" :
+ case "Dettagliato" :
   if ($text=="Tempo"|| 
       $text=="Temperatura"||
       $text=="Percepita"||
