@@ -40,6 +40,7 @@ switch($messaggio_prec){
    $keyboard = '["Dettagiato"],["Giornaliero"]';
    sendMessage($chatid,"non ho capito!",$keyboard);
   }
+  break;
   case "Giornaliero":
    $output = http_request("https://server-openweather.herokuapp.com/luogo/$text");
    if(is_numeric($output)){
