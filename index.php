@@ -95,7 +95,7 @@ file_get_contents($url);
 }
 Function openWeather($tipo,$luogo){
  $risposta = http_request("https://server-openweather.herokuapp.com/$tipo/$luogo");
-   if(is_numeric($output)){
+   if(is_numeric($risposta)){
      return("furbetto scrivi una città");
      }
      else{
